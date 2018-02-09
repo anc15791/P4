@@ -1,0 +1,4 @@
+table_set_default ipv4_lpm drop
+table_add ipv4_lpm ipv4_forward 10.10.1.2/32 => 02:b4:b1:3f:ac:26 3
+table_add ipv4_lpm ipv4_forward 10.10.2.2/32 => 02:ed:56:80:ed:78 1
+table_add ipv4_lpm ipv4_forward 10.10.3.2/32 => 02:b4:b1:3f:ac:26 2

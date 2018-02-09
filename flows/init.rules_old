@@ -1,0 +1,6 @@
+table_add firewall apply_rule 1 192.168.56.2 192.168.60.2 => 0
+table_add firewall apply_rule 1 192.168.60.2 192.168.56.2 => 0
+table_add firewall apply_rule 6 192.168.56.2 192.168.60.2 => 0
+table_add firewall apply_rule 6 192.168.60.2 192.168.56.2 => 0
+table_add firewall apply_rule 17 192.168.56.2 192.168.60.2 => 0
+table_add firewall apply_rule 17 192.168.60.2 192.168.56.2 => 0

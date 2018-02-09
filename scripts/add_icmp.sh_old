@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "$1" = "s1" ]
+then
+   addr="192.168.59.101"
+fi
+
+if [ "$1" = "s2" ]
+then
+   addr="192.168.59.102"
+fi
+
+../../../../bmv2/targets/simple_switch/runtime_CLI --thrift-port 9090 < ../flows/add_icmp.rules
+#../runtime_CLI --thrift-ip $addr < ../flows/add_icmp.rules
+
+echo "INFO: Enabling ICMP Check in the firewall of the switch $addr"

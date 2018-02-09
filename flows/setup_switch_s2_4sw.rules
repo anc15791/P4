@@ -1,0 +1,12 @@
+table_set_default send_frame _drop
+table_set_default forward _drop
+table_set_default ipv4_lpm _drop
+table_set_default firewall apply_default
+table_set_default count_table _drop
+table_add send_frame rewrite_mac 2 => 02:6c:44:a0:ee:20
+table_add send_frame rewrite_mac 1 => 02:65:84:06:4a:48
+table_add forward set_dmac 10.10.2.1 => 02:65:cc:30:80:d0
+table_add forward set_dmac 10.10.3.2 => 02:0b:89:0d:91:51
+table_add ipv4_lpm set_nhop 10.10.3.2/32 => 10.10.3.2 1
+table_add ipv4_lpm set_nhop 10.10.2.0/24 => 10.10.2.1 2
+table_add ipv4_lpm set_nhop 10.10.1.0/24 => 10.10.2.1 2

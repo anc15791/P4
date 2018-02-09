@@ -1,0 +1,11 @@
+table_set_default send_frame _drop
+table_set_default forward _drop
+table_set_default ipv4_lpm _drop
+table_set_default firewall apply_default
+table_set_default count_table _drop
+table_add send_frame rewrite_mac 2 => 08:00:27:14:50:e4
+table_add send_frame rewrite_mac 1 => 08:00:27:71:24:b8
+table_add forward set_dmac 192.168.56.2 => 08:00:27:0a:f9:d5
+table_add forward set_dmac 192.168.60.2 => 08:00:27:d9:95:6f
+table_add ipv4_lpm set_nhop 192.168.56.2/32 => 192.168.56.2 1
+table_add ipv4_lpm set_nhop 192.168.60.2/32 => 192.168.60.2 2
