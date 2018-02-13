@@ -1,0 +1,2 @@
+table_modify firewall apply_rule 0 0
+table_modify firewall apply_rule 1 0
